@@ -4,6 +4,7 @@ const path = require('node:path'); // path is Node´s native path utility module
 // path helps construct paths to access files and directories
 const {Client, GatewayIntentBits, Collection} = require("discord.js")
 const config = require("./config.json")
+const fetch = require('node-fetch');
 
 // Create a new client (our bot) instance
 const client = new Client({intents: [GatewayIntentBits.Guilds]});
@@ -22,10 +23,12 @@ for(const file of commandFiles) {
   client.commands.set(command.data.name, command);
 }
 
+// a message when the bot started
 client.once("ready", () => {
   console.log(`Ready! Logged in as ${client.user.tag}`);
   client.user.setActivity("I´m bot!");
 })
+
 
 // check if an interaction is a chat input command
 client.on('interactionCreate', async interaction => {
