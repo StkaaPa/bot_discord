@@ -2,9 +2,9 @@
 const fs = require('node:fs'); // fs is a Node´s native file system module
 const path = require('node:path'); // path is Node´s native path utility module.
 // path helps construct paths to access files and directories
-const {Client, GatewayIntentBits, Collection} = require("discord.js")
-const config = require("./config.json")
-const fetch = require('node-fetch');
+const {Client, GatewayIntentBits, Collection} = require("discord.js");
+const config = require("./config.json");
+/*const fetch = require('node-fetch');*/
 
 // Create a new client (our bot) instance
 const client = new Client({intents: [GatewayIntentBits.Guilds]});
